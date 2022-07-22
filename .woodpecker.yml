@@ -3,7 +3,7 @@ pipeline:
   build:
     image: jekyll/jekyll
     commands:
-      - touch Gemlock
+      - touch Gemfile.lock
       - ls -lisa
       - bundle install
       - bundle exec jekyll build
