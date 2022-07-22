@@ -7,7 +7,7 @@ pipeline:
       - chmod -R 777 .
       - bundle install
       - bundle exec jekyll build
-#      - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
+      - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - cp domains _site/.domains
       - cd _site
       - git init
@@ -16,5 +16,5 @@ pipeline:
       - git config user.name "CI Builder"
       - git remote add origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - git add --all
-      - git commit -m "CI Build"
-      - git push -u origin pages -f
+      - git commit -m "Woodpecker CI Jekyll Build"
+      - git push -u origin pages
