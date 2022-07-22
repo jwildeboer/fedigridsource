@@ -11,9 +11,10 @@ pipeline:
       - cp domains _site/.domains
       - cd _site
       - git init
+      - git branch -m pages
       - git config user.email "jan@wildeboer.net"
       - git config --global user.name "CI Builder"
       - git add --all
       - git commit -m "CI Build"
       - git remote add up $CODEBERG_ACCESS_TOKEN@https://codeberg.org/jwildeboer/fedigrid.git
-      - git push origin pages
+      - git push
