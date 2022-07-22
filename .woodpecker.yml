@@ -4,6 +4,7 @@ pipeline:
     image: jekyll/jekyll
     secrets: [ codeberg_access_token ]
     commands:
+      - echo $CODEBERG_ACCESS_TOKEN
       - chmod -R 777 .
       - bundle install
       - bundle exec jekyll build
