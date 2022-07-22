@@ -2,9 +2,9 @@
 pipeline:
   build:
     image: jekyll/jekyll
-    secrets: [ codeberg_access_token ]
+    secrets: [ cbtoken ]
     commands:
-      - echo $CODEBERG_ACCESS_TOKEN
+      - echo $CBTOKEN
       - chmod -R 777 .
       - bundle install
       - bundle exec jekyll build
@@ -17,5 +17,5 @@ pipeline:
       - git config --global user.name "CI Builder"
       - git add --all
       - git commit -m "CI Build"
-      - git remote add up $CODEBERG_ACCESS_TOKEN@https://codeberg.org/jwildeboer/fedigrid.git
+      - git remote add up $CBTOKEN@https://codeberg.org/jwildeboer/fedigrid.git
       - git push -u up pages -f
