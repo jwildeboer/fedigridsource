@@ -11,6 +11,6 @@ pipeline:
       - cp domains _site/.domains
       - cd _site
       - git init
-      - git add -all
+      - git add --all
       - git remote add up $CODEBERG_ACCESS_TOKEN@https://codeberg.org/jwildeboer/fedigrid.git
       - git push -u up pages -f
