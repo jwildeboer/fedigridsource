@@ -16,4 +16,4 @@ pipeline:
       - git add --all
       - git commit -m "CI Build"
       - git remote add up $CODEBERG_ACCESS_TOKEN@https://codeberg.org/jwildeboer/fedigrid.git
-      - git push -u up pages -f
+      - git push origin pages
