@@ -7,7 +7,7 @@ pipeline:
       - chmod -R 777 .
       - bundle install
       - bundle exec jekyll build
-      - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
+#      - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - cp domains _site/.domains
       - cd _site
       - git init
