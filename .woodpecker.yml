@@ -14,8 +14,8 @@ pipeline:
       - git init
       - git branch -m pages
       - git config user.email "jan@wildeboer.net"
-      - git config --global user.name "CI Builder"
+      - git config user.name "CI Builder"
+      - git remote add up $CBTOKEN@https://codeberg.org/jwildeboer/fedigrid.git
       - git add --all
       - git commit -m "CI Build"
-      - git remote add up $CBTOKEN@https://codeberg.org/jwildeboer/fedigrid.git
       - git push -u up pages -f
