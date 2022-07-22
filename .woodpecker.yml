@@ -4,6 +4,7 @@ pipeline:
     image: jekyll/jekyll
     commands:
       - touch Gemfile.lock
+      - chmod 777 Gemfile.lock
       - ls -lisa
       - bundle install
       - bundle exec jekyll build
