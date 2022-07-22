@@ -2,8 +2,13 @@
 pipeline:
   build:
     image: jekyll/jekyll
+    secrets: [ codeberg_access_token ]
     commands:
-      - touch Gemfile.lock
-      - ls -lisa
+      - chmod -R 777 .
       - bundle install
       - bundle exec jekyll build
+      - cp domains _site/.domains
+      - cd _site
+      - git init
+      - git remote add up $CODEBERG_ACCESS_TOKEN@https://codeberg.org/jwildeboer/fedigrid.git
+      - git push -u up master -f
