@@ -1,0 +1,6 @@
+# .woodpecker.yml
+pipeline:
+  build:
+    image: jekyll/jekyll
+    commands:
+      - echo "This is the build step"
