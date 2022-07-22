@@ -18,4 +18,5 @@ pipeline:
       - git remote add origin $$CBTOKEN@https://codeberg.org/jwildeboer/fedigrid.git
       - git add --all
       - git commit -m "CI Build"
+      - git remote show origin
       - git push origin pages -f
