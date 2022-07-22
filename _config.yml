@@ -4,5 +4,5 @@ description: Federated power grids, based on Open Standards, wall batteries and 
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-# destination: /Users/jwildeboer/repos/fedigrid
 keep_files: [ .domains, LICENSE, .git, .gitignore ]
+exclude: [ domains ]
