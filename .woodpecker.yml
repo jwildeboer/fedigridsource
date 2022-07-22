@@ -3,6 +3,7 @@ pipeline:
   build:
     image: jekyll/jekyll
     commands:
+      - who am i
       - ls -lisa
       - bundle install
       - bundle exec jekyll build
