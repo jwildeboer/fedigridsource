@@ -3,4 +3,5 @@ pipeline:
   build:
     image: jekyll/jekyll
     commands:
+      - bundle install
       - bundle exec jekyll build
