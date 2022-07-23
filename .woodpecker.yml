@@ -8,6 +8,7 @@ pipeline:
       - mkdir _site
       - cd _site
       - git clone https://codeberg.org/jwildeboer/fedigrid.git
+      - cd ..
       - bundle install
       - bundle exec jekyll build
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
