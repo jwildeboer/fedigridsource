@@ -20,8 +20,6 @@ pipeline:
       - bundle exec jekyll build
       - cp domains _site/.domains
       - cd _site
-      - ls -lisa
-      - git status
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
       - git push 

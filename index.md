@@ -2,7 +2,7 @@
 layout: default
 ---
 
-### 2022-07-23 THE IDEA
+### 2022-07-23 THE FUNDAMENTAL IDEA
 
 The Federated Power Grid. For neighbours. Streets. Villages. Cities.
 
