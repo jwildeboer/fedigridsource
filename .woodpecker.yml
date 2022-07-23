@@ -7,20 +7,18 @@ pipeline:
       - chmod -R 777 .
       - mkdir _site
       - cd _site
-      - git clone https://codeberg.org/jwildeboer/fedigrid.git
-      - chmod -R 777 .
-      - cd ..
-      - bundle install
-      - bundle exec jekyll build
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - git config --global user.email "$CBMAIL"
       - git config --global user.name "CI Builder"
       - git config --global init.defaultBranch pages
+      - git clone https://codeberg.org/jwildeboer/fedigrid.git
+      - git remote add origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
+      - chmod -R 777 .
+      - cd ..
+      - bundle install
+      - bundle exec jekyll build
       - cp domains _site/.domains
       - cd _site
-      - git init
-      - git remote add origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
-      - git pull
-      - git push -u origin pages
+      - git push
