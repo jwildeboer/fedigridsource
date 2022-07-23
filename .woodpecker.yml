@@ -1,19 +1,19 @@
 # .woodpecker.yml
 pipeline:
   build:
-    image: jekyll/minimal
+    image: jekyll/jekyll
     secrets: [ cbtoken, cbmail ]
     commands:
       - chmod -R 777 .
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - git config --global user.email "$CBMAIL"
       - git config --global user.name "CI Builder"
-      - git config --global init.defaultBranch pages
-      - git clone https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
+#      - git config --global init.defaultBranch pages
+      - git clone -b pages https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - mv fedigrid _site
       - cd _site
       - git remote set-url origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
-      - git branch -m pages
+#      - git branch -m pages
       - chmod -R 777 .
       - cd ..
       - bundle install
