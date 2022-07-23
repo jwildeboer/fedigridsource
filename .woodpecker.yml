@@ -8,6 +8,7 @@ pipeline:
       - mkdir _site
       - cd _site
       - git clone https://codeberg.org/jwildeboer/fedigrid.git
+      - chmod -R 777 .
       - cd ..
       - bundle install
       - bundle exec jekyll build
