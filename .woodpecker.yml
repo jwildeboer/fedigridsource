@@ -24,6 +24,7 @@ pipeline:
       - ls -lisa
       - cp domains _site/.domains
       - cd _site
+      - ls -lisa
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
       - git push 
