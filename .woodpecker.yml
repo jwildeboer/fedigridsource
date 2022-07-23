@@ -15,7 +15,7 @@ pipeline:
       - cd _site
       - git remote set-url origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
 #      - git branch -m pages
-      - chmod -R 644 .
+      - chmod -R a+w _site
       - cd ..
       - bundle install
       - bundle exec jekyll build
