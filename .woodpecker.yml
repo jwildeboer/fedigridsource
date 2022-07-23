@@ -12,10 +12,11 @@ pipeline:
 #      - git config --global init.defaultBranch pages
       - git clone -b pages https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - mv fedigrid _site
+      - chmod -R a+w _site
       - cd _site
       - git remote set-url origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
 #      - git branch -m pages
-      - chmod -R a+w _site
+#      - chmod -R a+w .
       - cd ..
       - bundle install
       - bundle exec jekyll build
