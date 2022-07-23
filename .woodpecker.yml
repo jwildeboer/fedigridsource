@@ -4,7 +4,7 @@ pipeline:
     image: jekyll/jekyll
     secrets: [ cbtoken, cbmail ]
     commands:
-#      - chmod -R 640 .
+      - chmod -R 644 .
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - git config --global user.email "$CBMAIL"
       - git config --global user.name "CI Builder"
