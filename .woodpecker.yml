@@ -12,6 +12,7 @@ pipeline:
       - git config --global user.name "CI Builder"
       - git config --global init.defaultBranch pages
       - git clone https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
+      - 
       - chmod -R 777 .
       - cd ..
       - bundle install
@@ -20,4 +21,4 @@ pipeline:
       - cd _site
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
-      - git push --set-upstream origin master
+      - git push -u origin pages
