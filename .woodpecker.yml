@@ -20,4 +20,4 @@ pipeline:
       - cd _site
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
-      - git push
+      - git push --set-upstream origin master
