@@ -13,8 +13,8 @@ pipeline:
       - bundle install
       - bundle exec jekyll build
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
-      - git config user.email "$CBMAIL"
-      - git config user.name "CI Builder"
+      - git config --global user.email "$CBMAIL"
+      - git config --global user.name "CI Builder"
       - git config --global init.defaultBranch pages
       - cp domains _site/.domains
       - cd _site
