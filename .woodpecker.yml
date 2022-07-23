@@ -4,27 +4,20 @@ pipeline:
     image: jekyll/jekyll
     secrets: [ cbtoken, cbmail ]
     commands:
-      - ls -lisa
       - chmod -R a+w .
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - git config --global user.email "$CBMAIL"
       - git config --global user.name "CI Builder"
-#      - git config --global init.defaultBranch pages
       - git clone -b pages https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - mv fedigrid _site
-      - ls -l
       - chmod -R a+w _site
       - cd _site
       - git remote set-url origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
-#      - git branch -m pages
-#      - chmod -R a+w .
       - cd ..
       - bundle install
       - bundle exec jekyll build
-      - ls -lisa
       - cp domains _site/.domains
       - cd _site
-      - ls -lisa
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
       - git push 
