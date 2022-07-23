@@ -22,4 +22,5 @@ pipeline:
       - git remote add origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
+      - git pull
       - git push -u origin pages
