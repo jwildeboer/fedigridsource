@@ -5,6 +5,9 @@ pipeline:
     secrets: [ cbtoken, cbmail ]
     commands:
       - chmod -R 777 .
+      - mkdir _site
+      - cd _site
+      - git clone https://codeberg.org/jwildeboer/fedigrid.git
       - bundle install
       - bundle exec jekyll build
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
