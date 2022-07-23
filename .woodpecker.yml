@@ -11,8 +11,7 @@ pipeline:
       - git config --global user.email "$CBMAIL"
       - git config --global user.name "CI Builder"
       - git config --global init.defaultBranch pages
-      - git clone https://codeberg.org/jwildeboer/fedigrid.git
-      - git remote add origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
+      - git clone https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - chmod -R 777 .
       - cd ..
       - bundle install
