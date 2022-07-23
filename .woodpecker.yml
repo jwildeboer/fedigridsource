@@ -12,7 +12,7 @@ pipeline:
       - git config --global user.name "CI Builder"
       - git config --global init.defaultBranch pages
       - git clone https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
-      - git branch -m pages
+      - git remote set-url origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
       - chmod -R 777 .
       - cd ..
       - bundle install
@@ -22,4 +22,4 @@ pipeline:
       - ls -lisa
       - git add --all
       - git commit -m "Woodpecker CI Jekyll Build"
-      - git push -u origin pages
+      - git push
