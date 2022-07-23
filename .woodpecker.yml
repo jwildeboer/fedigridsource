@@ -4,7 +4,7 @@ pipeline:
     image: jekyll/jekyll
     secrets: [ cbtoken, cbmail ]
     commands:
-      - chmod -R 640 .
+#      - chmod -R 640 .
       - git config --global --add safe.directory /woodpecker/src/codeberg.org/jwildeboer/fedigridsource/_site
       - git config --global user.email "$CBMAIL"
       - git config --global user.name "CI Builder"
@@ -14,7 +14,7 @@ pipeline:
       - cd _site
       - git remote set-url origin https://$CBTOKEN@codeberg.org/jwildeboer/fedigrid.git
 #      - git branch -m pages
-      - chmod -R 640 .
+      - chmod -R 644 .
       - cd ..
       - bundle install
       - bundle exec jekyll build
