@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Home
+nav_order: 1
+description: "Federated power grids, based on Open Standards, wall batteries and renewables."
 ---
 
 ### 2022-07-23 THE FUNDAMENTAL IDEA
