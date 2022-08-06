@@ -19,5 +19,5 @@ pipeline:
       - cp domains _site/.domains
       - cd _site
       - git add --all
-      - git commit -m "Woodpecker CI Jekyll Build"
+      - git commit -m "Woodpecker CI Jekyll Build at $( env TZ=Europe/Berlin date +"%Y-%m-%d %X %Z" )"
       - git push 
